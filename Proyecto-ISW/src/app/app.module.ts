@@ -8,11 +8,14 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { NavdataComponent } from './navdata/navdata.component';
 import { FormdireccionComponent } from './formdireccion/formdireccion.component';
 import { FormgeneralesComponent } from './formgenerales/formgenerales.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ErrorTailorModule } from '@ngneat/error-tailor';
+import { ReccontraComponent } from './reccontra/reccontra.component';
+
 
 @NgModule({
   declarations: [
@@ -21,9 +24,11 @@ import { ErrorTailorModule } from '@ngneat/error-tailor';
     FooterComponent,
     LoginComponent,
     NavbarComponent,
+    NavdataComponent,
     HomepageComponent, 
     FormdireccionComponent, 
-    FormgeneralesComponent
+    FormgeneralesComponent,
+    ReccontraComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +41,7 @@ import { ErrorTailorModule } from '@ngneat/error-tailor';
           required:'Campo requerido',
           minlength:({requiredLength, actualLength})=> 
           'Se necesitan 10 caracteres',
-          invalidAddress: error =>'Direccion invalida'
+          email: error =>'Direccion invalida'
         }
       }
     })

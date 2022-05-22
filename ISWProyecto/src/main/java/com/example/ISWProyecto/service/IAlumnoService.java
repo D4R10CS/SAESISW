@@ -9,8 +9,8 @@ import com.example.ISWProyecto.model.Alumno;
 public interface IAlumnoService {
 	
 	
-	Alumno findAlumno(String boleta, String password);
-	
+	Alumno findAlumno(String boleta, String contrasena);
+	Alumno findAlumnoByBoleta(String boleta);
 	List<Alumno> findAll();
 
 }

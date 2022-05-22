@@ -10,37 +10,21 @@ import javax.persistence.Table;
 @NamedQuery(name="Materias.findAll", query="SELECT a FROM Materias a")
 public class Materias {
 	
-	@Id 
-	private String id;
-	private String nombre;
-	private String semestre;
-	private String salon;
-	public String getId() {
-		return id;
+	@Id
+	private String idmateria;
+	 
+	private String nombre_m;
+	public String getIdmateria() {
+		return idmateria;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setIdmateria(String idmateria) {
+		this.idmateria = idmateria;
 	}
-	public String getNombre() {
-		return nombre;
+	public String getNombre_m() {
+		return nombre_m;
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setNombre_m(String nombre_m) {
+		this.nombre_m = nombre_m;
 	}
-	public String getSemestre() {
-		return semestre;
-	}
-	public void setSemestre(String semestre) {
-		this.semestre = semestre;
-	}
-	public String getSalon() {
-		return salon;
-	}
-	public void setSalon(String salon) {
-		this.salon = salon;
-	}
-	
-	
-	
 
 }

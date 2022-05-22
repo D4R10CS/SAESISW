@@ -3,7 +3,7 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">Home</a>
+            <a class="nav-link" aria-current="page" [routerLink]="['/home']">Home</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Mis Datos</a>
@@ -18,7 +18,7 @@
                     <a class="dropdown-item" href="#">Nacimiento</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" [routerLink]="['/generales']">Direccion</a>
+                    <a class="dropdown-item" [routerLink]="['/direccion']">Direccion</a>
                   </li>
                   <li>
                     <a class="dropdown-item" href="#">Padre/Tutor</a>
@@ -30,9 +30,9 @@
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Mi Inscripcion Actual</a>
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Inscripcion Actual</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Horario</a></li>
+              <li><a class="dropdown-item" href="">Horario</a></li>
               <li><a class="dropdown-item" href="#">Calificaciones</a></li>
               <li><a class="dropdown-item" href="#">Kardex</a></li>
             </ul>
@@ -74,7 +74,7 @@
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Dictamen</a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Solicitud de Dictamen</a></li>
-              <li><a class="dropdown-item" href="#">Visualizacion de Datos del Dictamen </a></li>
+              <li><a class="dropdown-item" href="#">Datos del Dictamen</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">

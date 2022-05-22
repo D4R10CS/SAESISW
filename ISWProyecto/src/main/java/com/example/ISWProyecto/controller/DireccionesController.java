@@ -6,18 +6,17 @@ import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.ISWProyecto.dto.DatosMedicosDto;
 import com.example.ISWProyecto.dto.DireccionesDto;
-import com.example.ISWProyecto.model.DatosMedicos;
 import com.example.ISWProyecto.model.Direcciones;
 import com.example.ISWProyecto.serviceImpl.DireccionesServiceImpl;
-
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/Direcciones")
 public class DireccionesController {
@@ -40,7 +39,7 @@ public class DireccionesController {
 	
 	
 	@RequestMapping(value="/findDireccion/{iddireccion}", method= RequestMethod.GET)
-	public ResponseEntity<DireccionesDto> findDatos(@PathVariable("iddireccion") Integer iddireccion){
+	public ResponseEntity<DireccionesDto> findDatos(@PathVariable("iddireccion") Long iddireccion){
 		Direcciones direcciones = direccionesService.findDireccion(iddireccion);
 		if(direcciones == null) {
 			return new ResponseEntity<DireccionesDto>(DireccionesDto.getInstance(direcciones), HttpStatus.NO_CONTENT);
@@ -56,9 +55,7 @@ public class DireccionesController {
 		
 		Direcciones dir = new Direcciones();
 		
-		if(!Objects.isNull(dirDto.getIddireccion()) && dirDto.getIddireccion()<0) {
-			dir.setIddireccion(dirDto.getIddireccion());
-		}
+		
 		
 		dir.setAlcaldia(dirDto.getAlcaldia());
 		dir.setCalle(dirDto.getCalle());

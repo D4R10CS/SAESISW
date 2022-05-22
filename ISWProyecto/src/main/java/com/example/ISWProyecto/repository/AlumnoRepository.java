@@ -8,7 +8,9 @@ import com.example.ISWProyecto.model.Alumno;
 
 public interface AlumnoRepository extends JpaRepository<Alumno, String> {
 	
-	@Query("SELECT a FROM Alumno a where a.boleta = :boleta and a.password = :password")
-	Alumno findAlumno(@Param("boleta") String boleta, @Param("password") String password);
-
+	@Query("SELECT a FROM Alumno a where a.boleta = :boleta and a.contrasena = :contrasena")
+	Alumno findAlumno(@Param("boleta") String boleta, @Param("contrasena") String contrasena);
+	@Query(value="SELECT * FROM Alumnos where boleta = :boleta", nativeQuery = true)
+	Alumno findAlumnoByBoleta(@Param("boleta") String boleta);
+	
 }
